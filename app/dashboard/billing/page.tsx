@@ -16,13 +16,13 @@ export default function Page() {
       <br />
       <h1 className="text-5xl">
         Or click on
-        <Link
+        <a
           className="text-blue-800"
-          href="www.linkedin.com/in/ayyan-ali-khan-765943320"
+          href="https://www.linkedin.com/in/ayyan-ali-khan-765943320"
           target="_blank"
         >
           LinkedIn
-        </Link>
+        </a>
       </h1>
     </div>
   );

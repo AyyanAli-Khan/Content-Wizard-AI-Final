@@ -14,18 +14,13 @@ export default function Home() {
   const socialIcons = [
     {
       icon: "/LinkedIn.png",
-      href: "www.linkedin.com/in/ayyan-ali-khan-765943320",
+      href: "https://www.linkedin.com/in/ayyan-ali-khan-765943320/",
       alt: "Linkedinicon",
     },
     {
       icon: "/instagram.png",
-      href: "/",
+      href: "https://www.instagram.com/ayyan___khann/",
       alt: "Instagramicon",
-    },
-    {
-      icon: "/Discord.png",
-      href: "/",
-      alt: "discordicon",
     },
     {
       icon: "/GitHub.png",
@@ -155,15 +150,15 @@ export default function Home() {
         </h1>
         <div className="w-48 sm:w-56 flex items-center gap-3 sm:gap-5 justify-between">
           {socialIcons.map((item, index) => (
-            <Link href={item.href} target="_blank" key={index}>
+            <a href={item.href} target="_blank" key={index}>
               <Image
                 src={item.icon}
-                height={70}
-                width={70}
+                height={50}
+                width={50}
                 alt={item.alt}
                 className="w-12 sm:w-16 lg:w-[70px]"
               />
-            </Link>
+            </a>
           ))}
         </div>
         <p className="mt-5 mb-10 text-sm sm:text-base">
