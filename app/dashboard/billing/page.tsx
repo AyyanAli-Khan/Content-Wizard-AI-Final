@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 // import {TotalCreditContext} from "@/app/(context)/CreditsContext"
 // import { useContext } from "react";
@@ -28,9 +29,7 @@ export default function Page() {
     //   </h1>
     // </div>
 
-      <div className="container p-5 flex items-center flex-wrap justify-center flex-col md:flex-row 
-      md:p-10
-      gap-6">
+      <div className="container h-screen p-5 flex items-start justify-center flex-wrap  flex-col md:flex-row md:p-10 gap-6">
       {/* Package 1 */}
       <div className="p-6 border border-gray-200 rounded-lg shadow-lg bg-white flex flex-col justify-between">
         <h2 className="text-xl font-semibold text-gray-800">Basic Plan</h2>
@@ -38,12 +37,12 @@ export default function Page() {
           Perfect for individual creators. Generate content with AI-powered templates.
         </p>
         <div className="mt-4 flex-grow">
-          <span className="text-2xl font-bold text-primary">$19.99 / month</span>
+          <span className="text-2xl font-bold text-primary">$9.99 / month</span>
           <p className="text-gray-500 mt-2">Limited templates and features.</p>
         </div>
-        <button className="mt-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+        <Button className="mt-4 w-28 font-medium text-[16px] bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">
           Get Started
-        </button>
+        </Button>
       </div>
 
       {/* Package 2 */}
@@ -53,12 +52,12 @@ export default function Page() {
           Designed for professionals and teams. Unlock all features and templates.
         </p>
         <div className="mt-4 flex-grow">
-          <span className="text-2xl font-bold text-primary">$49.99 / month</span>
+          <span className="text-2xl font-bold text-primary">$19.99 / month</span>
           <p className="text-gray-500 mt-2">Access to all templates, unlimited content generation.</p>
         </div>
-        <button className="mt-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+        <Button className="mt-4 w-28 font-medium text-[16px] bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">
           Get Started
-        </button>
+        </Button>
       </div>
     </div>
     
