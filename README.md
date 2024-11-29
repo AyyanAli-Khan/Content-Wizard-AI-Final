@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Content Wizard AI
+Content Wizard AI is an innovative web application designed to streamline and enhance content creation using artificial intelligence. The platform enables users to create AI-generated content seamlessly while managing templates, user data, and responses effectively. Built with advanced tools and technologies, it serves as a versatile solution for creators, marketers, and developers alike.
 
-## Getting Started
+---
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **AI-Powered Content Generation**:
+   - Leverages advanced AI models for generating high-quality content.
+   - Allows customization of templates for diverse content needs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Dynamic User Interface**:
+   - Built using modern React.js principles, including the `useState` and `useContext` hooks.
+   - Integrated with TailwindCSS for a sleek and responsive design.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Integration with External Services**:
+   - Supports user authentication via Clerk.
+   - Stores and manages data securely using Drizzle ORM and database configurations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Credit-Based Usage System**:
+   - Includes a credit management feature to monitor and regulate usage.
+   - Redirects users to billing if credits are exhausted.
 
-## Learn More
+5. **Data Storage**:
+   - Records user interactions and AI-generated content in a database.
+   - Logs key data points like template usage, timestamps, and email.
 
-To learn more about Next.js, take a look at the following resources:
+6. **Error Handling**:
+   - Built-in error detection and resolution mechanisms to enhance user experience.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- **Frontend**:
+  - React.js
+  - Next.js
+  - TailwindCSS
+  - Clerk Authentication
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Backend**:
+  - Drizzle ORM
+  - Database integration with schema definitions
+  - Moment.js for date-time handling
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **AI Integration**:
+  - ChatSession for interaction with AI models
+  - Prompt customization for tailored outputs
+
+---
+
+## How It Works
+
+1. **User Authentication**:
+   - Users log in via Clerk's authentication system.
+
+2. **Template Selection**:
+   - Users select a template from a predefined list.
+
+3. **Content Generation**:
+   - The AI model processes user-provided data and generates content based on selected templates.
+
+4. **Output & Storage**:
+   - AI responses are displayed in the Output Section.
+   - Data is securely stored in the database.
+
+5. **Credit Management**:
+   - Tracks and limits user activity based on their credit balance.
+
+---
+
+## Planned Features
+
+- **Voice Content Generation**:
+  - Adding support for audio-based outputs.
+
+- **Advanced Analytics**:
+  - Detailed usage reports and insights for users.
+
+- **Enhanced Templates**:
+  - Expanding the library of templates with more categories and customizations.
+
+
+
+# Developed By :
+ - Ayyan Ali Khan ✨
+ - [LinkedIn](www.linkedin.com/in/ayyan-ali-khan-765943320)

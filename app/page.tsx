@@ -1,101 +1,292 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
+import { Tablet, Workflow, MessagesSquare } from "lucide-react";
+import { Poppins } from "next/font/google";
+import { ArrowRight } from "lucide-react";
+
+const poppis = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const socialIcons = [
+    {
+      icon: "/LinkedIn.png",
+      href: "www.linkedin.com/in/ayyan-ali-khan-765943320",
+      alt: "Linkedinicon",
+    },
+    {
+      icon: "/instagram.png",
+      href: "/",
+      alt: "Instagramicon",
+    },
+    {
+      icon: "/Discord.png",
+      href: "/",
+      alt: "discordicon",
+    },
+    {
+      icon: "/GitHub.png",
+      href: "https://github.com/AyyanAli-Khan",
+      alt: "githubicon",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+
+  return (
+    <div className={`${poppis.className} w-full`}>
+      {/* Navbar */}
+      <nav className="w-full px-4 sm:px-6 lg:px-[85px] h-auto py-4 sm:h-36 flex items-center justify-between">
+        <div>
+          <Image
+            src="/logo.png"
+            height={100}
+            width={100}
+            alt="logo"
+            className="w-16 sm:w-24 lg:w-[100px]"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div>
+          <Link href="/dashboard">
+            <Button className="font-semibold w-32 sm:w-[156px] h-10 sm:h-[49px] text-sm sm:text-md">
+              Get Started
+            </Button>
+          </Link>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="w-full px-4 sm:px-6 lg:px-[85px] min-h-[60vh] py-10 flex items-center justify-center gap-6 sm:gap-10 flex-col">
+        <div className="text-center">
+          <h1 className="text-4xl tracking-normal sm:text-6xl lg:text-7xl font-bold">
+            Content <span className="text-primary">Wizard</span> AI
+          </h1>
+        </div>
+        <div>
+          <p className="text-center leading-normal w-full sm:w-[90%] lg:w-[616px] text-base sm:text-[20px] font-regular">
+            Transform your content game with our AI-powered app, crafting
+            captivating, high-quality text in just seconds! Say goodbye to
+            writer's block and hello to endless inspiration.
+          </p>
+        </div>
+        <div>
+          <Link href="/dashboard">
+            <Button className="font-semibold w-[156px] h-[49px] text-md">
+              Lets Explore &nbsp;
+              <ArrowRight />
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Cards */}
+      <div className="w-full px-4 sm:px-6 lg:px-[85px] flex flex-col sm:flex-row items-center gap-6 sm:gap-4 lg:gap-6 sm:justify-between mb-10">
+        {/* Repeat this structure for each card */}
+        <div className="w-full sm:w-[30%] lg:w-80 h-64 flex items-left justify-center flex-col gap-5 p-5 rounded-tr-[50px] py-4  bg-primary text-white hover:bg-[#1955cf] transition-all duration-150 cursor-pointer">
+      
+            <Tablet className="text-white " height={60} width={60} />
+            {/* <div className="h-20 w-20 bg-primary rounded-xl text-white flex items-center justify-center">
+        </div> */}
+            <div>
+              <h1 className="text-2xl font-semibold">25+ Templates</h1>
+            </div>
+            <div>
+              <p className="text-sm">
+                More than 25 templates to explore and work with
+              </p>
+              {/* <Button variant={"seconda
+            ry"}>Learn More</Button> */}
+              <h3 className="mt-4 cursor-pointer">Learn More</h3>
+            </div>
+        </div>
+        <div className="w-80  h-64 flex items-left justify-center flex-col gap-5 p-5 py-4  rounded-tr-[50px] bg-primary text-white  hover:bg-[#1955cf]  transition-all duration-150 cursor-pointer">
+          <Workflow className="text-white " height={60} width={60} />
+          {/* <div className="h-20 w-20 bg-primary rounded-xl text-white flex items-center justify-center">
+        </div> */}
+          <div>
+            <h1 className="text-2xl font-semibold">Instant Content Ideas</h1>
+          </div>
+          <div>
+            <p className="text-sm">
+              Get endless, AI-generated prompts for fresh inspiration.
+            </p>
+            <h3 className="mt-4 cursor-pointer">Learn More</h3>
+          </div>
+        </div>
+        <div className="w-80  h-64 flex items-left justify-center flex-col gap-5 p-5 py-4  rounded-tr-[50px] bg-primary text-white  hover:bg-[#1955cf]  transition-all duration-150 cursor-pointer">
+          <MessagesSquare className="text-white " height={60} width={60} />
+          {/* <div className="h-20 w-20 bg-primary rounded-xl text-white flex items-center justify-center">
+        </div> */}
+          <div>
+            <h1 className="text-2xl font-semibold">Real-Time Assistance</h1>
+          </div>
+          <div>
+            <p className="text-sm">
+              Enhance your text with instant, smart suggestions.
+            </p>
+            {/* <Button variant={"secondary"}>Learn More</Button> */}
+            <h3 className="mt-4 cursor-pointer">Learn More</h3>
+          </div>
+        </div>
+      </div>
+
+      {/* Developed by */}
+      <div className="w-full pt-14 px-4 sm:px-6 lg:px-[85px] flex items-center justify-center gap-4 flex-col min-h-[55vh] text-center">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold">
+          <span className="text-primary">Developed</span> by
+        </h1>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
+          Ayyan Ali Khan
+        </h2>
+        <p className="text-lg sm:text-xl mt-6 sm:mt-10 w-full sm:w-[90%] lg:w-[924px]">
+          Content Wizard AI is crafted to transform your content creation
+          experience. Built for speed and quality, it delivers engaging text,
+          smart editing, and versatile templates to bring ideas to life
+          effortlessly.
+        </p>
+      </div>
+
+      {/* Connect with me */}
+      <div className="w-full py-8 sm:h-36 flex justify-center items-center flex-col gap-4">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+          <span className="text-primary">Connect</span> With Me
+        </h1>
+        <div className="w-48 sm:w-56 flex items-center gap-3 sm:gap-5 justify-between">
+          {socialIcons.map((item, index) => (
+            <Link href={item.href} target="_blank" key={index}>
+              <Image
+                src={item.icon}
+                height={70}
+                width={70}
+                alt={item.alt}
+                className="w-12 sm:w-16 lg:w-[70px]"
+              />
+            </Link>
+          ))}
+        </div>
+        <p className="mt-5 mb-10 text-sm sm:text-base">
+          Copyright &copy; 2024 Ayyan Technologies &#174;
+        </p>
+      </div>
     </div>
   );
+
+  // return (
+  //   <div className={` ${poppis.className} sm:w-full `}>
+  //     <nav className="w-full lg:px-[85px] h-36  flex items-center justify-between
+  //       sm:px-10 bg-red-500
+  //   ">
+  //       <div>
+  //         <Image src="/logo.png" height={100} width={100} alt="logo" />
+  //       </div>
+  //       <div>
+  //         <Link href="/dashboard">
+  //           <Button className="font-semibold lg:w-[156px] h-[49px] text-md">
+  //             Get Started
+  //           </Button>
+  //         </Link>
+  //       </div>
+  //     </nav>
+  //     {/* hero section */}
+  //     <div
+  //       className="w-full overflow-hidden px-[85px] h-[60vh] flex items-center justify-center gap-10 flex-col">
+  //       <div>
+  //         <h1 className="lg:text-7xl font-bold sm:text-6xl">
+  //           Content <span className="text-primary"> Wizard </span> AI
+  //         </h1>
+  //       </div>
+  //       <div>
+  //         {/*  w-[616px] */}
+  //         <p className="w-[616px] h-[87px] text-[20px] font-semibold">
+  //           Transform your content game with our AI-powered app, crafting
+  //           captivating, high-quality text in just seconds! Say goodbye to
+  //           writer's block and hello to endless inspiration.
+  //         </p>
+  //       </div>
+  //       <div>
+  //         <Link href="/dashboard">
+  //           <Button className="font-semibold  w-[156px] h-[49px] text-md">
+  //             Lets Explore &nbsp;
+  //             <ArrowRight />
+  //           </Button>
+  //         </Link>
+  //       </div>
+  //     </div>
+
+  //     {/* Cards */}
+  //     <div className="w-full flex items-center justify-between px-[85px] ">
+  //       <div className="w-80  h-64 flex items-left justify-center flex-col gap-5 p-5 py-4  rounded-tr-[50px] bg-primary text-white  hover:bg-[#1955cf]  transition-all duration-150 cursor-pointer">
+  //         <Tablet className="text-white " height={60} width={60} />
+  //         {/* <div className="h-20 w-20 bg-primary rounded-xl text-white flex items-center justify-center">
+  //       </div> */}
+  //         <div>
+  //           <h1 className="text-2xl font-semibold">25+ Templates</h1>
+  //         </div>
+  //         <div>
+  //           <p className="text-sm">
+  //             More than 25 templates to explore and work with
+  //           </p>
+  //           {/* <Button variant={"seconda
+  //           ry"}>Learn More</Button> */}
+  //           <h3 className="mt-4 cursor-pointer">Learn More</h3>
+  //         </div>
+  //       </div>
+        // <div className="w-80  h-64 flex items-left justify-center flex-col gap-5 p-5 py-4  rounded-tr-[50px] bg-primary text-white  hover:bg-[#1955cf]  transition-all duration-150 cursor-pointer">
+        //   <Workflow className="text-white " height={60} width={60} />
+        //   {/* <div className="h-20 w-20 bg-primary rounded-xl text-white flex items-center justify-center">
+        // </div> */}
+        //   <div>
+        //     <h1 className="text-2xl font-semibold">Instant Content Ideas</h1>
+        //   </div>
+        //   <div>
+        //     <p className="text-sm">
+        //       Get endless, AI-generated prompts for fresh inspiration.
+        //     </p>
+        //     <h3 className="mt-4 cursor-pointer">Learn More</h3>
+        //   </div>
+        // </div>
+        // <div className="w-80  h-64 flex items-left justify-center flex-col gap-5 p-5 py-4  rounded-tr-[50px] bg-primary text-white  hover:bg-[#1955cf]  transition-all duration-150 cursor-pointer">
+        //   <MessagesSquare className="text-white " height={60} width={60} />
+        //   {/* <div className="h-20 w-20 bg-primary rounded-xl text-white flex items-center justify-center">
+        // </div> */}
+        //   <div>
+        //     <h1 className="text-2xl font-semibold">Real-Time Assistance</h1>
+        //   </div>
+        //   <div>
+        //     <p className="text-sm">
+        //       Enhance your text with instant, smart suggestions.
+        //     </p>
+        //     {/* <Button variant={"secondary"}>Learn More</Button> */}
+        //     <h3 className="mt-4 cursor-pointer">Learn More</h3>
+        //   </div>
+        // </div>
+      // </div>
+
+  //     {/* Developed by */}
+  //     <div className="w-full pt-14 px-[85px] flex items-center justify-center gap-4 flex-col h-[55vh]">
+  //         <h1 className="text-7xl font-bold"><span className="text-primary">Developed</span> by</h1>
+  //         <h2 className='text-5xl font-semibold'>Ayyan Ali Khan</h2>
+  //         <p className='text-xl mt-10 w-[924px] '>Content Wizard AI is crafted to transform your content creation experience. Built for speed and quality, it delivers engaging text, smart editing, and versatile templates to bring ideas to life effortlessly.</p>
+  //     </div>
+
+  //     {/* Connect with me  */}
+  //     <div className="w-full h-36 flex justify-center items-center flex-col gap-4 ">
+  //         <h1 className="text-4xl font-semibold "><span className="text-primary">Connect</span> With Me</h1>
+  //         <div className="w-56 flex items-center gap-5 justify-between">
+  //           {
+  //             socialIcons.map((item , index)=> (
+  //               <Link href={item.href} key={index}>
+  //                <Image src={item.icon} height={70} width={70} alt={item.alt} />
+  //               </Link>
+  //             )
+  //             )
+  //           }
+  //         </div>
+  //          <p className="mt-5 mb-10">Copyright &copy; 2024 Ayyan Technologies &#174;</p>
+  //     </div>
+
+  //   </div>
+  // );
 }
